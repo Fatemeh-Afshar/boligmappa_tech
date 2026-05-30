@@ -84,4 +84,11 @@ Bygg et enkelt UI som:
 
 ## Innlevering
 
-Del arbeidet ditt som et GitHub-repository eller ZIP-arkiv. Inkluder en kort `README` med steg for å kjøre prosjektet, eventuelle antakelser du gjorde, og hva du ville gjort videre hvis du hadde mer tid.
+1. **Fork** dette repositoriet til din egen GitHub-konto.
+2. **Klon** din fork lokalt og opprett en ny branch (f.eks. `feature/solution`).
+3. Implementer løsningen din på den branchen.
+4. **Commit** jevnlig med meningsfulle commit-meldinger — vi ønsker å se hvordan du jobber steg for steg.
+5. **Push** branchen din til **din egen fork** og åpne en Pull Request mot **din egen forks `main`-branch** — åpne **ikke** en PR mot det originale repositoriet.
+6. Del lenken til din fork (eller PR-en på din fork) med oss.
+
+Inkluder en kort `README` med steg for å kjøre prosjektet, eventuelle antakelser du gjorde, og hva du ville gjort videre hvis du hadde mer tid.

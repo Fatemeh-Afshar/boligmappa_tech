@@ -1,2 +1,6 @@
-INTERVIEW-TASK.md
-CANDIDATE-TASK.md
+# Ignore everything
+*
+
+# Track only the candidate-facing task
+!.gitignore
+!INTERVIEW-TASK.md
