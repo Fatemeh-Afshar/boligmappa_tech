@@ -31,13 +31,20 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Swagger is enabled in all environments so the API is browsable from the
+// packaged Windows build too (at /swagger), not just during development.
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors(FrontendCorsPolicy);
+
+// Serve the built frontend (copied into wwwroot at publish time) from the same
+// origin as the API. UseDefaultFiles maps "/" to index.html; the fallback sends
+// any non-API, non-file route back to index.html so the SPA handles routing.
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapControllers();
+app.MapFallbackToFile("index.html");
 
 app.Run();

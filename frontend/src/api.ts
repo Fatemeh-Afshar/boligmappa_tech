@@ -1,6 +1,8 @@
 import type { Document, DocumentInput } from './types';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5080';
+// In production the SPA is served by the API itself, so calls are same-origin
+// (empty base => "/api/..."). In dev the Vite server proxies via VITE_API_BASE_URL.
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '';
 
 async function handle<T>(response: Response): Promise<T> {
   if (!response.ok) {
