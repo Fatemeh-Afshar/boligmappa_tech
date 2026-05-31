@@ -1,10 +1,13 @@
-import { DOCUMENT_TYPE_LABELS, type Document } from '../types';
+import { DOCUMENT_TYPE_LABELS, type Document, type DocumentType } from '../types';
 
 interface Props {
   documents: Document[];
   onEdit: (document: Document) => void;
   onDelete: (document: Document) => void;
 }
+
+// "Warm" types render with the orange badge, the rest with the blue one.
+const WARM_TYPES: ReadonlySet<DocumentType> = new Set<DocumentType>(['Warranty', 'Invoice', 'Other']);
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString('no-NO', {
@@ -34,7 +37,11 @@ export function DocumentList({ documents, onEdit, onDelete }: Props) {
         {documents.map((doc) => (
           <tr key={doc.id}>
             <td>{doc.title}</td>
-            <td>{DOCUMENT_TYPE_LABELS[doc.documentType]}</td>
+            <td>
+              <span className={`badge${WARM_TYPES.has(doc.documentType) ? ' badge--warm' : ''}`}>
+                {DOCUMENT_TYPE_LABELS[doc.documentType]}
+              </span>
+            </td>
             <td>{formatDate(doc.uploadedAt)}</td>
             <td>{doc.uploadedBy}</td>
             <td className="row-actions">

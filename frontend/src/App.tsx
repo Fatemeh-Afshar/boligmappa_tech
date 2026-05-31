@@ -64,7 +64,7 @@ export default function App() {
 
       <DocumentForm editing={editing} onSubmit={handleSubmit} onCancelEdit={() => setEditing(null)} />
 
-      <section className="card">
+      <section className="card card--list">
         <h2>Dokumenter</h2>
         {loading ? (
           <p>Laster …</p>

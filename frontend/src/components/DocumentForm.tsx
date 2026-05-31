@@ -49,7 +49,7 @@ export function DocumentForm({ editing, onSubmit, onCancelEdit }: Props) {
   };
 
   return (
-    <form className="card" onSubmit={handleSubmit}>
+    <form className="card card--form" onSubmit={handleSubmit}>
       <h2>{editing ? 'Rediger dokument' : 'Nytt dokument'}</h2>
 
       <label>
