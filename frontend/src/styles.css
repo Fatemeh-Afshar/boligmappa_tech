@@ -1,0 +1,227 @@
+:root {
+  /* Blue (primary) + orange (accent) theme */
+  --blue: #1f6feb;
+  --blue-dark: #1a5fd0;
+  --blue-soft: #eaf2ff;
+  --orange: #f97316;
+  --orange-dark: #ea580c;
+  --orange-soft: #fff3e8;
+
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --border: #dbe3ee;
+  --text: #1f2933;
+  --muted: #6b7480;
+  --danger: #d1242f;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* Header — blue gradient banner with an orange underline accent */
+header {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 4px solid var(--orange);
+  box-shadow: 0 6px 18px rgba(31, 111, 235, 0.18);
+}
+
+header h1 {
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(31, 41, 51, 0.05);
+}
+
+/* Form card gets an orange top accent; list card gets a blue one */
+.card--form {
+  border-top: 3px solid var(--orange);
+}
+
+.card--list {
+  border-top: 3px solid var(--blue);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-soft);
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--blue);
+  color: #fff;
+  transition: background 0.15s, transform 0.05s;
+}
+
+button:hover {
+  background: var(--blue-dark);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Secondary / cancel = orange */
+button.secondary {
+  background: var(--orange);
+  color: #fff;
+}
+
+button.secondary:hover {
+  background: var(--orange-dark);
+}
+
+button.link {
+  background: none;
+  color: var(--orange-dark);
+  padding: 0.25rem 0.4rem;
+  font-weight: 600;
+}
+
+button.link:hover {
+  background: var(--orange-soft);
+}
+
+button.link.danger {
+  color: var(--danger);
+}
+
+button.link.danger:hover {
+  background: #fdeced;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.doc-table th,
+.doc-table td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.doc-table thead th {
+  color: var(--blue-dark);
+  font-weight: 600;
+  background: var(--blue-soft);
+  border-bottom: 2px solid var(--blue);
+}
+
+.doc-table tbody tr:hover {
+  background: var(--orange-soft);
+}
+
+/* Document-type badge — alternating blue / orange tones */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.badge--warm {
+  background: var(--orange-soft);
+  color: var(--orange-dark);
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.error {
+  background: #fdeced;
+  border: 1px solid #f5c2c7;
+  border-left: 4px solid var(--danger);
+  color: var(--danger);
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}

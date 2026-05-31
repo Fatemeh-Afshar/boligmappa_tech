@@ -1,6 +1,22 @@
-# Ignore everything
-*
+# --- .NET ---
+bin/
+obj/
+*.user
 
-# Track only the candidate-facing task
-!.gitignore
-!INTERVIEW-TASK.md
+# Generated/packaged output (regenerate with scripts/package-windows.sh)
+publish/
+backend/Boligmappa.Api/wwwroot/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+.vite/
+# Local registry override (machine-specific); fresh clones use the default public registry.
+.npmrc
+
+# --- Editors / OS ---
+.vs/
+.vscode/
+.idea/
+.DS_Store
+*.swp
