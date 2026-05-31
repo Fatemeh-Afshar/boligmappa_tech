@@ -1,6 +1,16 @@
-# Ignore everything
-*
+# --- .NET ---
+bin/
+obj/
+*.user
 
-# Track only the candidate-facing task
-!.gitignore
-!INTERVIEW-TASK.md
+# --- Node / frontend ---
+node_modules/
+dist/
+.vite/
+
+# --- Editors / OS ---
+.vs/
+.vscode/
+.idea/
+.DS_Store
+*.swp
