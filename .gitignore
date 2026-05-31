@@ -7,6 +7,8 @@ obj/
 node_modules/
 dist/
 .vite/
+# Local registry override (machine-specific); fresh clones use the default public registry.
+.npmrc
 
 # --- Editors / OS ---
 .vs/
