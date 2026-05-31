@@ -35,6 +35,19 @@ UI-et kjører på `http://localhost:5173` og snakker med backend via
 `VITE_API_BASE_URL` (se `frontend/.env`). Backend tillater CORS fra
 Vite-dev-serveren.
 
+### Tester
+
+```bash
+cd backend
+dotnet test
+```
+
+xUnit-tester dekker `DocumentService` (CRUD + not-found-stier, og at
+`PropertyId`/`UploadedAt` er uforanderlige ved oppdatering) og
+`InMemoryDocumentStore` — inkludert en regresjonstest for `GetDocumentsNewerThan`
+som verifiserer at et dokument med nøyaktig samme tidsstempel som `since`
+*ikke* tas med (strengt `>`).
+
 ---
 
 ## API
@@ -77,8 +90,8 @@ oppstart.
 
 ## Hva jeg ville gjort videre med mer tid
 
-- **Tester:** enhetstester for `DocumentService` (CRUD + not-found-stier) og
-  integrasjonstester mot endpointene med `WebApplicationFactory`.
+- **Integrasjonstester:** ende-til-ende-tester mot endpointene med
+  `WebApplicationFactory` (enhetstester for service og store er på plass).
 - **Validering & feilformat:** standardisert `ProblemDetails` for feil.
 - **Frontend:** velge/bytte eiendom i UI-et i stedet for fast `propertyId`,
   optimistiske oppdateringer, og litt mer brukervennlig feilhåndtering.
