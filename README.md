@@ -50,6 +50,29 @@ som verifiserer at et dokument med nøyaktig samme tidsstempel som `since`
 
 ---
 
+## Kjøre på Windows uten verktøy (ingen Visual Studio, Node eller .NET)
+
+Appen kan pakkes som én selvstendig Windows-build der frontend serveres av
+backend. Da trenger Windows-maskinen **ingenting installert**.
+
+**Bygg pakken** (på en maskin med .NET 8 SDK + Node — f.eks. utviklingsmaskinen):
+
+```bash
+scripts/package-windows.sh        # lager publish/win-x64/
+```
+
+Dette bygger frontend, kopierer den inn i API-ets `wwwroot`, og publiserer en
+self-contained `win-x64`-build (.NET-runtime bakt inn i `.exe`-en).
+
+**Kjør på Windows:** kopier hele `publish/win-x64`-mappen til Windows-maskinen og
+dobbeltklikk `start.bat` (eller `Boligmappa.Api.exe`). Nettleseren åpnes mot
+`http://localhost:5080` — der ligger både UI-et og API-et (Swagger på `/swagger`).
+
+> Frontend kaller API-et på samme origin i produksjon (relative `/api/...`-URLer),
+> så det fungerer uansett hvilken port/host backend kjører på.
+
+---
+
 ## API
 
 | Method   | Route                                    | Beskrivelse                         |

@@ -3,6 +3,10 @@ bin/
 obj/
 *.user
 
+# Generated/packaged output (regenerate with scripts/package-windows.sh)
+publish/
+backend/Boligmappa.Api/wwwroot/
+
 # --- Node / frontend ---
 node_modules/
 dist/
